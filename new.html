@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Antonia Katerina Photography</title>
+
+    <!-- Google Fonts: DM Sans, HKGrotesk, OgiremaItalic -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=HKGrotesk:wght@400&display=swap" rel="stylesheet">
+    <!-- OgiremaItalic via @font-face (fallback to system italic if not available) -->
+    <style>
+        @font-face {
+            font-family: 'OgiremaItalic';
+            src: url('https://antoniakaterinaphotography.com/wp-content/uploads/ogirema-italic.woff2') format('woff2');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+    </style>
+
+    <style>
+        /* === RESET & BASE === */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; font-family: 'DM Sans', sans-serif; color: #202020; background: #f8f5f2; }
+        img { max-width: 100%; display: block; }
+
+        /* === COMING SOON HEADING === */
+        .ak-coming-soon {
+            text-align: center; padding: 4rem 2rem 2rem;
+        }
+        .ak-coming-soon h1 {
+            font-family: 'DM Sans', sans-serif; font-weight: 400; 
+            font-size: 60px; line-height: 66px; color: #202020;
+            text-transform: uppercase;
+        }
+
+        /* === CONTACT SECTION - FLEX LAYOUT === */
+        .ak-contact {
+            display: flex; flex-wrap: wrap; align-items: center;
+            padding: 2rem 2rem 6rem; gap: 5rem; max-width: 1400px; margin: 0 auto;
+        }
+        .ak-image-col {
+            flex: 1; min-width: 300px;
+        }
+        .ak-image-col img {
+            width: 100%; height: auto; object-fit: cover; filter: grayscale(100%) brightness(0.9);
+            border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .ak-form-col {
+            flex: 1; min-width: 300px; max-width: 500px;
+        }
+
+        /* === FORM HEADING === */
+        .ak-form-col h2 {
+            font-family: 'DM Sans', sans-serif; font-weight: 400; 
+            font-size: 60px; line-height: 66px; color: #202020;
+            margin-bottom: 1.5rem;
+        }
+
+        /* === ADDITIONAL P TAGS (HKGrotesk) === */
+        .ak-form-col p {
+            font-family: 'HKGrotesk', sans-serif; font-weight: 400; 
+            font-size: 17px; line-height: 24px; color: #202020;
+            margin-bottom: 1.5rem; 
+        }
+        .ak-form-col p:last-child {
+            margin-bottom: 2rem;
+        }
+
+        /* === FORM LABELS === */
+        .ak-form label {
+            display: block; margin-bottom: 0.8rem; 
+            font-family: 'HKGrotesk', sans-serif; font-weight: 400; 
+            font-size: 17px; line-height: 24px; color: #202020;
+            
+        }
+
+        /* === INPUT FIELDS & TEXTAREA === */
+        .ak-form input, .ak-form textarea {
+            width: 100%; padding: 0.9rem 0; border: none; 
+            border-bottom: 1px solid #202020; background: transparent;
+            font-family: 'OgiremaItalic', serif; font-style: italic; 
+            font-weight: 400; font-size: 24px; line-height: 48px; 
+            color: #0a0a0a; margin-bottom: 2.5rem;
+            outline: none; transition: border 0.3s;
+        }
+        .ak-form input::placeholder, .ak-form textarea::placeholder {
+            color: rgba(10, 10, 10, 0.4); font-style: italic;
+        }
+        .ak-form input:focus, .ak-form textarea:focus {
+            border-bottom: 2px solid #000;
+        }
+        .ak-form textarea { min-height: 120px; resize: none; }
+
+        /* === DUAL INPUT ROW === */
+        .ak-input-row {
+            display: flex; gap: 2rem;
+        }
+        .ak-input-row > div { flex: 1; }
+
+        /* === SEND MESSAGE BUTTON === */
+        .ak-form button {
+            background: #000; color: #fff; 
+            font-family: 'DM Sans', sans-serif; font-weight: 500; 
+            font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1.2px;
+            border: none; padding: 0.9rem 2.2rem; cursor: pointer;
+            transition: background 0.3s; margin-top: 1rem;
+        }
+        .ak-form button:hover { background: #1a1a1a; }
+
+        /* === EMAIL LINK === */
+        .ak-email {
+            margin-top: 2rem; font-family: 'HKGrotesk', sans-serif; 
+            font-size: 17px; line-height: 24px; color: #202020;
+            /* text-transform: uppercase; */
+        }
+        .ak-email a {
+            color: #202020; text-decoration: none; font-weight: 500;
+        }
+        .ak-email a:hover { text-decoration: underline; }
+
+        /* === FOOTER === */
+        .ak-footer {
+            text-align: center; padding: 2rem; 
+            font-size: 0.8rem; color: #888; 
+            font-family: 'DM Sans', sans-serif; background: #f8f5f2;
+        }
+
+        /* === MOBILE RESPONSIVE === */
+        @media (max-width: 992px) {
+            .ak-coming-soon h1, .ak-form-col h2 { font-size: 48px; line-height: 54px; }
+            .ak-contact { flex-direction: column; padding: 2rem 1.5rem; gap: 3rem; }
+            .ak-input-row { flex-direction: column; gap: 0; }
+        }
+        @media (max-width: 480px) {
+            .ak-coming-soon h1, .ak-form-col h2 { font-size: 36px; line-height: 42px; }
+            .ak-form input, .ak-form textarea { font-size: 20px; line-height: 40px; }
+            .ak-form label, .ak-form-col p { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- COMING SOON HEADING -->
+    <section class="ak-coming-soon">
+        <h1>New Website Coming Soon</h1>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="ak-contact">
+        <!-- IMAGE LEFT -->
+        <div class="ak-image-col">
+            <img src="/img.jpeg" alt="Wedding Photography">
+        </div>
+
+        <!-- FORM RIGHT -->
+        <div class="ak-form-col">
+            <h2>Get In Touch</h2>
+
+            <p id="ptag">I WOULD ABSOLUTELY LOVE TO WORK WITH YOU ON YOUR WEDDING DAY.</p>
+            <p id="ptag">FOR PRICING AND ANY OTHER ENQUIRES PLEASE USE THE BELOW FORM. ALTERNATIVELY SEND ME AN EMAIL.</p>
+            <p id="ptag">HELLO@ANTONIAKATERINAPHOTOGRAPHY.COM</p>
+
+            <form class="ak-form" id="contactForm">
+                
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <div class="ak-input-row">
+                    <div>
+                        
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div>
+                        
+                        <input type="tel" id="phone" name="phone" placeholder="Telephone Number">
+                    </div>
+                </div>
+
+                
+                <input type="text" id="wedding-date" name="wedding-date" placeholder="Date of Wedding">
+
+                
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <p class="ak-email">
+                ALTERNATIVELY SEND ME AN EMAIL: 
+                <a href="mailto:hello@antoniakaterinaphotography.com">hello@antoniakaterinaphotography.com</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="ak-footer">
+        © 2025 Antonia Katerina Photography | All Rights Reserved
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('wedding-date').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nWedding Date: ${date}\n\nMessage:\n${message}`;
+            const subject = encodeURIComponent(`Contact Form: ${name}`);
+            const mailto = `mailto:hello@antoniakaterinaphotography.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailto;
+        });
+    </script>
+</body>
+</html>
